@@ -11,6 +11,10 @@ before_install:
   - go get github.com/Masterminds/glide
   - go get github.com/go-playground/overalls
 
+before_script:
+  - mv ${TRAVIS_HOME}/gopath/src/github.com/{${TRAVIS_REPO_SLUG%%/*},matthieugrieger}
+  - cd ${TRAVIS_HOME}/gopath/src/github.com/matthieugrieger/mumbledj
+
 script:
   - make coverage
 
