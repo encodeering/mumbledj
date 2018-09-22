@@ -43,9 +43,9 @@
 * [`aria2`](https://aria2.github.io/) if you plan on using services that throttle download speeds (like Mixcloud)
 
 **If installing via `go install` or from source, the following must be installed:**
-* [Go 1.5+](https://golang.org)
+* [Go 1.11+](https://golang.org)
   * __NOTE__: Extra installation steps are required for a working Go installation. Once Go is installed, type `go help gopath` for more information.
-  * If the repositories for your distro contain a version of Go older than 1.5, try using [`gvm`](https://github.com/moovweb/gvm) to install Go 1.5 or newer.
+  * If the repositories for your distro contain a version of Go older than 1.11, try using [`gvm`](https://github.com/moovweb/gvm) to install Go 1.11 or newer.
 
 #### YouTube API Key
 A YouTube API key must be present in your configuration file in order to use the YouTube service within the bot. Below is a guide for retrieving an API key:
@@ -79,11 +79,6 @@ go get -u github.com/matthieugrieger/mumbledj
 ```
 
 This should place a binary in `$GOPATH/bin` that can be used to start the bot.
-
-**NOTE:** If using Go 1.5, you MUST execute the following for `go get` to work:
-```
-export GO15VENDOREXPERIMENT=1
-```
 
 ### Pre-compiled Binaries (easiest)
 Pre-compiled binaries are provided for convenience. Overall, I do not recommend using these unless you cannot get `go install` to work properly. Binaries compiled on your own machine are likely more efficient as these binaries are cross-compiled from a 64-bit Linux system.
