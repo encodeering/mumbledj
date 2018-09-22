@@ -3,7 +3,7 @@ dirs = ./interfaces/... ./commands/... ./services/... ./bot/... .
 all: mumbledj
 
 mumbledj: ## Default action. Builds MumbleDJ.
-	go build .
+	go build -ldflags="-s -w" -v .
 
 .PHONY: test
 test: ## Runs unit tests for MumbleDJ.
