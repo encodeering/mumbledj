@@ -1,5 +1,7 @@
 MumbleDJ Changelog
 ==================
+### September 22, 2016 -- `v3.3.0`
+* Update of dependencies.
 
 ### November 5, 2016 -- `v3.2.1`
 * Fixed YouTube video offsets. Now YouTube URLs with `?t=<timestamp>` at the end will start the audio playback at the appropriate position.
