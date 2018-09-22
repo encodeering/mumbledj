@@ -11,3 +11,6 @@ before_script:
 
 script:
   - make
+
+after_success:
+  - ./mumbledj -v
