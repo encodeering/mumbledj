@@ -38,7 +38,7 @@
 
 ### Requirements
 **All MumbleDJ installations must also have the following installed:**
-* [`youtube-dl`](https://rg3.github.io/youtube-dl/download.html)
+* [`yt-dlp`](https://github.com/yt-dlp/yt-dlp)
 * [`ffmpeg`](https://ffmpeg.org) OR [`avconv`](https://libav.org)
 * [`aria2`](https://aria2.github.io/) if you plan on using services that throttle download speeds (like Mixcloud)
 

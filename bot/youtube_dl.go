@@ -17,7 +17,7 @@ import (
 	"github.com/spf13/viper"
 )
 
-// YouTubeDL is a struct that gathers all methods related to the youtube-dl
+// YouTubeDL is a struct that gathers all methods related to the yt-dlp
 // software.
 // youtube-dl: https://rg3.github.io/youtube-dl/
 type YouTubeDL struct{}
@@ -44,9 +44,9 @@ func (yt *YouTubeDL) Download(t interfaces.Track) error {
 	if _, err := os.Stat(filepath); os.IsNotExist(err) {
 		var cmd *exec.Cmd
 		if t.GetService() == "Mixcloud" {
-			cmd = exec.Command("youtube-dl", "--verbose", "--no-mtime", "--output", filepath, "--format", format, "--external-downloader", "aria2c", player, t.GetURL())
+			cmd = exec.Command("yt-dlp", "--verbose", "--no-mtime", "--output", filepath, "--format", format, "--external-downloader", "aria2c", player, t.GetURL())
 		} else {
-			cmd = exec.Command("youtube-dl", "--verbose", "--no-mtime", "--output", filepath, "--format", format, player, t.GetURL())
+			cmd = exec.Command("yt-dlp", "--verbose", "--no-mtime", "--output", filepath, "--format", format, player, t.GetURL())
 		}
 		output, err := cmd.CombinedOutput()
 		if err != nil {
@@ -54,7 +54,7 @@ func (yt *YouTubeDL) Download(t interfaces.Track) error {
 			for s := range cmd.Args {
 				args += cmd.Args[s] + " "
 			}
-			logrus.Warnf("%s\n%s\nyoutube-dl: %s", args, string(output), err.Error())
+			logrus.Warnf("%s\n%s\nyt-dlp: %s", args, string(output), err.Error())
 			return errors.New("Track download failed")
 		}
 

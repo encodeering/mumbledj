@@ -41,7 +41,7 @@ func PerformStartupChecks() {
 	}
 
 	if err := checkYouTubeDLInstallation(); err != nil {
-		logrus.Fatalln("youtube-dl is either not installed or is not discoverable in $PATH. youtube-dl is required to download audio.")
+		logrus.Fatalln("yt-dlp is either not installed or is not discoverable in $PATH. yt-dlp is required to download audio.")
 	}
 	if viper.GetString("defaults.player_command") == "ffmpeg" {
 		if err := checkFfmpegInstallation(); err != nil {
@@ -66,9 +66,9 @@ func PerformStartupChecks() {
 
 func checkYouTubeDLInstallation() error {
 	logrus.Infoln("Checking YouTubeDL installation...")
-	command := exec.Command("youtube-dl", "--version")
+	command := exec.Command("yt-dlp", "--version")
 	if err := command.Run(); err != nil {
-		return errors.New("youtube-dl is not properly installed")
+		return errors.New("yt-dlp is not properly installed")
 	}
 	return nil
 }

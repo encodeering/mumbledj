@@ -1,5 +1,8 @@
 MumbleDJ Changelog
 ==================
+### September 15, 2024 -- `v3.3.1`
+* Update of dependencies.
+
 ### September 22, 2016 -- `v3.3.0`
 * Update of dependencies.
 
